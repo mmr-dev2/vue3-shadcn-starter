@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+/* Fonts */
+@import "fonts/dana.css";
+
+@theme inline {
+    --font-dana: 'Dana', sans-serif;
+}
+
+@theme {
+    --font-sans: Dana, sans-serif;
+    --default-font-feature-settings: "ss02";
+    --default-font-family: var(--font-sans);
+}
