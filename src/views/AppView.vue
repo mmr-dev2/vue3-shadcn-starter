@@ -1,12 +1,7 @@
 <template>
-    <VDashboardGroup unit="rem">
-        <LayoutSidebar/>
-
-        <RouterView/>
-    </VDashboardGroup>
+    <RouterView/>
 </template>
 
 <script setup lang="ts">
-    // Components
-    import LayoutSidebar from '@/components/layout/LayoutSidebar.vue';
+
 </script>
