@@ -1,14 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+@import "typography.css";
+@import "tw-animate-css";
 
-/* Fonts */
-@import "fonts/dana.css";
-
-@theme inline {
-    --font-dana: 'Dana', sans-serif;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme {
     --font-sans: Dana, sans-serif;
     --default-font-feature-settings: "ss02";
     --default-font-family: var(--font-sans);
+}
+
+@theme inline {
+    --font-heading: var(--font-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
 }
