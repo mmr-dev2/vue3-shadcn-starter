@@ -10,12 +10,12 @@ import type { Direction, UseDirection } from '@/types/direction';
 const STORAGE_KEY = 'direction';
 const DEFAULT: Direction = 'rtl';
 
-function getInitialDirection(): Direction {
-    return document.documentElement.dir === 'rtl' ? 'rtl' : DEFAULT;
+function initialize(): Direction {
+    return document.documentElement.dir === 'ltr' ? 'ltr' : DEFAULT;
 }
 
 export const useDirection = createSharedComposable((): UseDirection => {
-    const direction = useStorage<Direction>(STORAGE_KEY, getInitialDirection());
+    const direction = useStorage<Direction>(STORAGE_KEY, initialize());
 
     watchEffect(() => {
         document.documentElement.dir = direction.value;
