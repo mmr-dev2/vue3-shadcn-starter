@@ -17,6 +17,7 @@
     import NavProjects from '@/components/NavProjects.vue';
     import NavUser from '@/components/NavUser.vue';
     import TeamSwitcher from '@/components/TeamSwitcher.vue';
+    import { t } from '@/services/language.service';
 
     import {
         Sidebar,
@@ -41,101 +42,101 @@
             {
                 name: 'Acme Inc',
                 logo: GalleryVerticalEnd,
-                plan: 'Enterprise'
+                plan: t('sidebar.team_plan.enterprise')
             },
             {
                 name: 'Acme Corp.',
                 logo: AudioWaveform,
-                plan: 'Startup'
+                plan: t('sidebar.team_plan.startup')
             },
             {
                 name: 'Evil Corp.',
                 logo: Command,
-                plan: 'Free'
+                plan: t('sidebar.team_plan.free')
             }
         ],
         navMain: [
             {
-                title: 'Playground',
+                title: t('sidebar.nav.playground.title'),
                 url: '#',
                 icon: SquareTerminal,
                 isActive: true,
                 items: [
                     {
-                        title: 'History',
+                        title: t('sidebar.nav.playground.history'),
                         url: '#'
                     },
                     {
-                        title: 'Starred',
+                        title: t('sidebar.nav.playground.starred'),
                         url: '#'
                     },
                     {
-                        title: 'Settings',
+                        title: t('sidebar.nav.playground.settings'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: 'Models',
+                title: t('sidebar.nav.models.title'),
                 url: '#',
                 icon: Bot,
                 items: [
                     {
-                        title: 'Genesis',
+                        title: t('sidebar.nav.models.genesis'),
                         url: '#'
                     },
                     {
-                        title: 'Explorer',
+                        title: t('sidebar.nav.models.explorer'),
                         url: '#'
                     },
                     {
-                        title: 'Quantum',
+                        title: t('sidebar.nav.models.quantum'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: 'Documentation',
+                title: t('sidebar.nav.documentation.title'),
                 url: '#',
                 icon: BookOpen,
                 items: [
                     {
-                        title: 'Introduction',
+                        title: t('sidebar.nav.documentation.introduction'),
                         url: '#'
                     },
                     {
-                        title: 'Get Started',
+                        title: t('sidebar.nav.documentation.get_started'),
                         url: '#'
                     },
                     {
-                        title: 'Tutorials',
+                        title: t('sidebar.nav.documentation.tutorials'),
                         url: '#'
                     },
                     {
-                        title: 'Changelog',
+                        title: t('sidebar.nav.documentation.changelog'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: 'Settings',
+                title: t('sidebar.nav.settings.title'),
                 url: '#',
                 icon: Settings2,
                 items: [
                     {
-                        title: 'General',
+                        title: t('sidebar.nav.settings.general'),
                         url: '#'
                     },
                     {
-                        title: 'Team',
+                        title: t('sidebar.nav.settings.team'),
                         url: '#'
                     },
                     {
-                        title: 'Billing',
+                        title: t('sidebar.nav.settings.billing'),
                         url: '#'
                     },
                     {
-                        title: 'Limits',
+                        title: t('sidebar.nav.settings.limits'),
                         url: '#'
                     }
                 ]
@@ -143,17 +144,17 @@
         ],
         projects: [
             {
-                name: 'Design Engineering',
+                name: t('sidebar.projects.design_engineering'),
                 url: '#',
                 icon: Frame
             },
             {
-                name: 'Sales & Marketing',
+                name: t('sidebar.projects.sales_marketing'),
                 url: '#',
                 icon: PieChart
             },
             {
-                name: 'Travel',
+                name: t('sidebar.projects.travel'),
                 url: '#',
                 icon: Map
             }

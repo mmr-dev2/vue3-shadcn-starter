@@ -33,7 +33,7 @@
 
 <template>
     <SidebarGroup>
-        <SidebarGroupLabel>Platform</SidebarGroupLabel>
+        <SidebarGroupLabel>{{ $t('sidebar.nav_main.platform_label') }}</SidebarGroupLabel>
         <SidebarMenu>
             <Collapsible
                 v-for="item in items"

@@ -10,11 +10,13 @@
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem class="hidden md:block">
-                            <BreadcrumbLink href="#"> Building Your Application </BreadcrumbLink>
+                            <BreadcrumbLink href="#">
+                                {{ $t('app.breadcrumb.building_your_application') }}
+                            </BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator class="hidden md:block" />
                         <BreadcrumbItem>
-                            <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+                            <BreadcrumbPage>{{ $t('app.breadcrumb.data_fetching') }}</BreadcrumbPage>
                         </BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>

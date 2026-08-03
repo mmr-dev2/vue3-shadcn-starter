@@ -32,7 +32,7 @@
 
 <template>
     <SidebarGroup class="group-data-[collapsible=icon]:hidden">
-        <SidebarGroupLabel>Projects</SidebarGroupLabel>
+        <SidebarGroupLabel>{{ $t('sidebar.nav_projects.label') }}</SidebarGroupLabel>
         <SidebarMenu>
             <SidebarMenuItem v-for="item in projects" :key="item.name">
                 <SidebarMenuButton as-child>
@@ -45,7 +45,7 @@
                     <DropdownMenuTrigger as-child>
                         <SidebarMenuAction show-on-hover>
                             <MoreHorizontal />
-                            <span class="sr-only">More</span>
+                            <span class="sr-only">{{ $t('sidebar.nav_projects.more_sr') }}</span>
                         </SidebarMenuAction>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
@@ -55,16 +55,16 @@
                     >
                         <DropdownMenuItem>
                             <Folder class="text-muted-foreground" />
-                            <span>View Project</span>
+                            <span>{{ $t('sidebar.nav_projects.view_project') }}</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Forward class="text-muted-foreground" />
-                            <span>Share Project</span>
+                            <span>{{ $t('sidebar.nav_projects.share_project') }}</span>
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem>
                             <Trash2 class="text-muted-foreground" />
-                            <span>Delete Project</span>
+                            <span>{{ $t('sidebar.nav_projects.delete_project') }}</span>
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
@@ -72,7 +72,7 @@
             <SidebarMenuItem>
                 <SidebarMenuButton class="text-sidebar-foreground/70">
                     <MoreHorizontal class="text-sidebar-foreground/70" />
-                    <span>More</span>
+                    <span>{{ $t('sidebar.nav_projects.more') }}</span>
                 </SidebarMenuButton>
             </SidebarMenuItem>
         </SidebarMenu>

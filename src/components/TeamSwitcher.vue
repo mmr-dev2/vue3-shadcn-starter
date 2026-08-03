@@ -62,7 +62,7 @@
                     :side-offset="4"
                 >
                     <DropdownMenuLabel class="text-muted-foreground text-xs">
-                        Teams
+                        {{ $t('sidebar.team_switcher.teams_label') }}
                     </DropdownMenuLabel>
                     <DropdownMenuItem
                         v-for="(team, index) in teams"
@@ -83,7 +83,9 @@
                         >
                             <Plus class="size-4" />
                         </div>
-                        <div class="text-muted-foreground font-medium">Add team</div>
+                        <div class="text-muted-foreground font-medium">
+                            {{ $t('sidebar.team_switcher.add_team') }}
+                        </div>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>

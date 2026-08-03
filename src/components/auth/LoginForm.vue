@@ -20,28 +20,28 @@
     <form :class="cn('flex flex-col gap-6', props.class)">
         <FieldGroup>
             <div class="flex flex-col items-center gap-1 text-center">
-                <h1 class="text-2xl font-bold">Login to your account</h1>
+                <h1 class="text-2xl font-bold">{{ $t('login.title') }}</h1>
                 <p class="text-muted-foreground text-sm text-balance">
-                    Enter your email below to login to your account
+                    {{ $t('login.subtitle') }}
                 </p>
             </div>
             <Field>
-                <FieldLabel for="email"> Email </FieldLabel>
+                <FieldLabel for="email"> {{ $t('login.email_label') }} </FieldLabel>
                 <Input id="email" type="email" placeholder="m@example.com" required />
             </Field>
             <Field>
                 <div class="flex items-center">
-                    <FieldLabel for="password"> Password </FieldLabel>
+                    <FieldLabel for="password"> {{ $t('login.password_label') }} </FieldLabel>
                     <a href="#" class="ms-auto text-sm underline-offset-4 hover:underline">
-                        Forgot your password?
+                        {{ $t('login.forgot_password') }}
                     </a>
                 </div>
                 <Input id="password" type="password" required />
             </Field>
             <Field>
-                <Button type="submit"> Login </Button>
+                <Button type="submit"> {{ $t('login.login_button') }} </Button>
             </Field>
-            <FieldSeparator>Or continue with</FieldSeparator>
+            <FieldSeparator>{{ $t('login.or_continue_with') }}</FieldSeparator>
             <Field>
                 <Button variant="outline" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -50,11 +50,11 @@
                             fill="currentColor"
                         />
                     </svg>
-                    Login with GitHub
+                    {{ $t('login.login_with_github') }}
                 </Button>
                 <FieldDescription class="text-center">
-                    Don't have an account?
-                    <a href="#">Sign up</a>
+                    {{ $t('login.no_account') }}
+                    <a href="#">{{ $t('login.sign_up') }}</a>
                 </FieldDescription>
             </Field>
         </FieldGroup>

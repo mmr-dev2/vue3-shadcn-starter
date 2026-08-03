@@ -19,7 +19,7 @@
         <div class="bg-muted relative hidden lg:block">
             <img
                 src=""
-                alt="Image"
+                :alt="$t('login.side_image_alt')"
                 class="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
             />
         </div>

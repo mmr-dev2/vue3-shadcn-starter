@@ -71,28 +71,28 @@
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
                             <Sparkles />
-                            Upgrade to Pro
+                            {{ $t('sidebar.nav_user.upgrade_to_pro') }}
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
                             <BadgeCheck />
-                            Account
+                            {{ $t('sidebar.nav_user.account') }}
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <CreditCard />
-                            Billing
+                            {{ $t('sidebar.nav_user.billing') }}
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             <Bell />
-                            Notifications
+                            {{ $t('sidebar.nav_user.notifications') }}
                         </DropdownMenuItem>
                     </DropdownMenuGroup>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
                         <LogOut />
-                        Log out
+                        {{ $t('sidebar.nav_user.log_out') }}
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
