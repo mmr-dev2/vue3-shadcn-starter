@@ -31,6 +31,10 @@ export function createI18n() {
     return i18n;
 }
 
+export function setI18nLocale(locale: Locale): void {
+    i18n.global.locale = locale;
+}
+
 export function t(key: string, ...args: unknown[]): string {
     return i18n.global.t(key, ...(args as []));
 }

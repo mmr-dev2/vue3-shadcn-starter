@@ -11,6 +11,9 @@ import { useDirection } from '@/composables/useDirection';
 // Config
 import { LOCALES } from '@/config/locale';
 
+// I18n
+import { setI18nLocale } from '@/i18n';
+
 // Types
 import type { Locale, UseLocale } from '@/types/locale';
 
@@ -31,13 +34,13 @@ export const useLocale = createSharedComposable((): UseLocale => {
         const { font, direction } = LOCALES[locale.value];
 
         document.documentElement.lang = locale.value;
+        setI18nLocale(locale.value);
         setFont(font);
         setDirection(direction);
     });
 
     function setLocale(value: Locale): void {
         locale.value = value;
-        location.reload();
     }
 
     return {
