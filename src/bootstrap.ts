@@ -2,9 +2,9 @@
 import ApiRepository from '@/repositories/api.repository';
 
 // Services
-import LanguageService from '@/services/language.service';
 import TokenService from '@/services/token.service';
 
+// Middlewares
 import AuthenticateUser from '@/repositories/middleware/AuthenticateUser';
 
 // Enums
@@ -16,12 +16,4 @@ ApiRepository.addResponseMiddleware(AuthenticateUser);
 
 if (TokenService.isExist()) {
     ApiRepository.setHeader(HttpHeader.AUTHORIZATION, `Bearer ${TokenService.get()}`);
-}
-
-if (LanguageService.isRtl()) {
-    document.documentElement.dir = 'rtl';
-    document.documentElement.lang = 'fa';
-} else {
-    document.documentElement.dir = 'ltr';
-    document.documentElement.lang = 'en';
 }

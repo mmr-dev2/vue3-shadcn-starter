@@ -17,7 +17,7 @@
     import NavProjects from '@/components/NavProjects.vue';
     import NavUser from '@/components/NavUser.vue';
     import TeamSwitcher from '@/components/TeamSwitcher.vue';
-    import { t } from '@/services/language.service';
+    import { t } from '@/i18n';
 
     import {
         Sidebar,
