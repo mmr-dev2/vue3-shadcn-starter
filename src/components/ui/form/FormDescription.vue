@@ -4,7 +4,7 @@
     import { useFormField } from './useFormField';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 
     const { formDescriptionId } = useFormField();
@@ -16,6 +16,6 @@
         data-slot="form-description"
         :class="cn('text-muted-foreground text-sm', props.class)"
     >
-        <slot/>
+        <slot />
     </p>
 </template>

@@ -16,6 +16,6 @@
         :class="cn('text-foreground font-semibold', props.class)"
         v-bind="delegatedProps"
     >
-        <slot/>
+        <slot />
     </DialogTitle>
 </template>

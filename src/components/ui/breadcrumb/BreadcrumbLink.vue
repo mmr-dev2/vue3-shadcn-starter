@@ -4,9 +4,12 @@
     import { Primitive } from 'reka-ui';
     import { cn } from '@/utils';
 
-    const props = withDefaults(defineProps<PrimitiveProps & { class?: HTMLAttributes['class'] }>(), {
-        as: 'a'
-    });
+    const props = withDefaults(
+        defineProps<PrimitiveProps & { class?: HTMLAttributes['class'] }>(),
+        {
+            as: 'a'
+        }
+    );
 </script>
 
 <template>
@@ -16,6 +19,6 @@
         :as-child="asChild"
         :class="cn('hover:text-foreground transition-colors', props.class)"
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

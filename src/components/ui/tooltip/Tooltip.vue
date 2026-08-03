@@ -9,11 +9,7 @@
 </script>
 
 <template>
-    <TooltipRoot
-        v-slot="slotProps"
-        data-slot="tooltip"
-        v-bind="forwarded"
-    >
-        <slot v-bind="slotProps"/>
+    <TooltipRoot v-slot="slotProps" data-slot="tooltip" v-bind="forwarded">
+        <slot v-bind="slotProps" />
     </TooltipRoot>
 </template>

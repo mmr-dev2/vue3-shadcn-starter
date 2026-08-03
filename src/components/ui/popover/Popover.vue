@@ -9,11 +9,7 @@
 </script>
 
 <template>
-    <PopoverRoot
-        v-slot="slotProps"
-        data-slot="popover"
-        v-bind="forwarded"
-    >
-        <slot v-bind="slotProps"/>
+    <PopoverRoot v-slot="slotProps" data-slot="popover" v-bind="forwarded">
+        <slot v-bind="slotProps" />
     </PopoverRoot>
 </template>

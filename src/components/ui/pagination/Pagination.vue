@@ -5,9 +5,11 @@
     import { PaginationRoot, useForwardPropsEmits } from 'reka-ui';
     import { cn } from '@/utils';
 
-    const props = defineProps<PaginationRootProps & {
-        class?: HTMLAttributes['class']
-    }>();
+    const props = defineProps<
+        PaginationRootProps & {
+            class?: HTMLAttributes['class'];
+        }
+    >();
     const emits = defineEmits<PaginationRootEmits>();
 
     const delegatedProps = reactiveOmit(props, 'class');
@@ -21,6 +23,6 @@
         v-bind="forwarded"
         :class="cn('mx-auto flex w-full justify-center', props.class)"
     >
-        <slot v-bind="slotProps"/>
+        <slot v-bind="slotProps" />
     </PaginationRoot>
 </template>

@@ -9,11 +9,7 @@
 </script>
 
 <template>
-    <CollapsibleRoot
-        v-slot="slotProps"
-        data-slot="collapsible"
-        v-bind="forwarded"
-    >
-        <slot v-bind="slotProps"/>
+    <CollapsibleRoot v-slot="slotProps" data-slot="collapsible" v-bind="forwarded">
+        <slot v-bind="slotProps" />
     </CollapsibleRoot>
 </template>

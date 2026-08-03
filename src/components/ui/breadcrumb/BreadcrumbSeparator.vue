@@ -4,7 +4,7 @@
     import { cn } from '@/utils';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 </script>
 
@@ -16,7 +16,7 @@
         :class="cn('[&>svg]:size-3.5', props.class)"
     >
         <slot>
-            <ChevronRight/>
+            <ChevronRight />
         </slot>
     </li>
 </template>

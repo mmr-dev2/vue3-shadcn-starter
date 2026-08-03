@@ -3,7 +3,7 @@
     import { cn } from '@/utils';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 </script>
 
@@ -12,6 +12,6 @@
         data-slot="alert-dialog-header"
         :class="cn('flex flex-col gap-2 text-center sm:text-start', props.class)"
     >
-        <slot/>
+        <slot />
     </div>
 </template>

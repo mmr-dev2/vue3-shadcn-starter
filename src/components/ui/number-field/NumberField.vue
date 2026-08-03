@@ -15,6 +15,6 @@
 
 <template>
     <NumberFieldRoot v-slot="slotProps" v-bind="forwarded" :class="cn('grid gap-1.5', props.class)">
-        <slot v-bind="slotProps"/>
+        <slot v-bind="slotProps" />
     </NumberFieldRoot>
 </template>

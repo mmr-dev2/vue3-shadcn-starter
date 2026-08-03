@@ -8,7 +8,11 @@
 </script>
 
 <template>
-    <div data-slot="sidebar-group-content" data-sidebar="group-content" :class="cn('w-full text-sm', props.class)">
-        <slot/>
+    <div
+        data-slot="sidebar-group-content"
+        data-sidebar="group-content"
+        :class="cn('w-full text-sm', props.class)"
+    >
+        <slot />
     </div>
 </template>

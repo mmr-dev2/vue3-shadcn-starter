@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <DialogTrigger
-        data-slot="dialog-trigger"
-        v-bind="props"
-    >
-        <slot/>
+    <DialogTrigger data-slot="dialog-trigger" v-bind="props">
+        <slot />
     </DialogTrigger>
 </template>

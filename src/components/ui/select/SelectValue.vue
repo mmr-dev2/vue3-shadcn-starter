@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <SelectValue
-        data-slot="select-value"
-        v-bind="props"
-    >
-        <slot/>
+    <SelectValue data-slot="select-value" v-bind="props">
+        <slot />
     </SelectValue>
 </template>

@@ -7,9 +7,9 @@
     const props = withDefaults(
         defineProps<
             PrimitiveProps & {
-            showOnHover?: boolean;
-            class?: HTMLAttributes['class'];
-        }
+                showOnHover?: boolean;
+                class?: HTMLAttributes['class'];
+            }
         >(),
         {
             as: 'button'
@@ -37,6 +37,6 @@
         :as="as"
         :as-child="asChild"
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

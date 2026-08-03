@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <DrawerTrigger
-        data-slot="drawer-trigger"
-        v-bind="props"
-    >
-        <slot/>
+    <DrawerTrigger data-slot="drawer-trigger" v-bind="props">
+        <slot />
     </DrawerTrigger>
 </template>

@@ -25,7 +25,7 @@ export const fieldVariants = cva(
     }
 );
 
-export type FieldVariants = VariantProps<typeof fieldVariants>
+export type FieldVariants = VariantProps<typeof fieldVariants>;
 
 export { default as Field } from './Field.vue';
 export { default as FieldContent } from './FieldContent.vue';

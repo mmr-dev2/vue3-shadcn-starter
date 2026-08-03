@@ -7,10 +7,10 @@
     const props = withDefaults(
         defineProps<
             PrimitiveProps & {
-            size?: 'sm' | 'md';
-            isActive?: boolean;
-            class?: HTMLAttributes['class'];
-        }
+                size?: 'sm' | 'md';
+                isActive?: boolean;
+                class?: HTMLAttributes['class'];
+            }
         >(),
         {
             as: 'a',
@@ -38,6 +38,6 @@
             )
         "
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

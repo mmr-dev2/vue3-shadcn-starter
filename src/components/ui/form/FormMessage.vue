@@ -6,7 +6,7 @@
     import { useFormField } from './useFormField';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 
     const { name, formMessageId } = useFormField();

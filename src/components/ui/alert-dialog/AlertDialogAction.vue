@@ -13,6 +13,6 @@
 
 <template>
     <AlertDialogAction v-bind="delegatedProps" :class="cn(buttonVariants(), props.class)">
-        <slot/>
+        <slot />
     </AlertDialogAction>
 </template>

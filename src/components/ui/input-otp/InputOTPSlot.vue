@@ -6,7 +6,7 @@
     import { useVueOTPContext } from 'vue-input-otp';
     import { cn } from '@/utils';
 
-    const props = defineProps<{ index: number, class?: HTMLAttributes['class'] }>();
+    const props = defineProps<{ index: number; class?: HTMLAttributes['class'] }>();
 
     const delegatedProps = reactiveOmit(props, 'class');
 
@@ -22,11 +22,19 @@
         v-bind="forwarded"
         data-slot="input-otp-slot"
         :data-active="slot?.isActive"
-        :class="cn('data-[active=true]:border-ring data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-input relative flex h-9 w-9 items-center justify-center border-y border-e text-sm shadow-xs transition-all outline-none first:rounded-s-md first:border-s last:rounded-e-md data-[active=true]:z-10 data-[active=true]:ring-3', props.class)"
+        :class="
+            cn(
+                'data-[active=true]:border-ring data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-input relative flex h-9 w-9 items-center justify-center border-y border-e text-sm shadow-xs transition-all outline-none first:rounded-s-md first:border-s last:rounded-e-md data-[active=true]:z-10 data-[active=true]:ring-3',
+                props.class
+            )
+        "
     >
         {{ slot?.char }}
-        <div v-if="slot?.hasFakeCaret" class="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div class="animate-caret-blink bg-foreground h-4 w-px duration-1000"/>
+        <div
+            v-if="slot?.hasFakeCaret"
+            class="pointer-events-none absolute inset-0 flex items-center justify-center"
+        >
+            <div class="animate-caret-blink bg-foreground h-4 w-px duration-1000" />
         </div>
     </div>
 </template>

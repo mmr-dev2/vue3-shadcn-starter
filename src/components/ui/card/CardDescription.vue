@@ -3,15 +3,12 @@
     import { cn } from '@/utils';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 </script>
 
 <template>
-    <p
-        data-slot="card-description"
-        :class="cn('text-muted-foreground text-sm', props.class)"
-    >
-        <slot/>
+    <p data-slot="card-description" :class="cn('text-muted-foreground text-sm', props.class)">
+        <slot />
     </p>
 </template>

@@ -9,11 +9,7 @@
 </script>
 
 <template>
-    <SelectRoot
-        v-slot="slotProps"
-        data-slot="select"
-        v-bind="forwarded"
-    >
-        <slot v-bind="slotProps"/>
+    <SelectRoot v-slot="slotProps" data-slot="select" v-bind="forwarded">
+        <slot v-bind="slotProps" />
     </SelectRoot>
 </template>

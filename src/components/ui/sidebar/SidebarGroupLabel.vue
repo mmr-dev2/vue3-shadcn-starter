@@ -6,8 +6,8 @@
 
     const props = defineProps<
         PrimitiveProps & {
-        class?: HTMLAttributes['class'];
-    }
+            class?: HTMLAttributes['class'];
+        }
     >();
 </script>
 
@@ -25,6 +25,6 @@
             )
         "
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

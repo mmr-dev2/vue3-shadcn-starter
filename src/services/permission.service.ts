@@ -5,7 +5,8 @@ type PermissionMap = Record<string, true>;
 class PermissionService {
     private static STORAGE_KEY: string = 'permissions';
 
-    private static _permissions: PermissionMap = StorageService.get<PermissionMap>(this.STORAGE_KEY) || {};
+    private static _permissions: PermissionMap =
+        StorageService.get<PermissionMap>(this.STORAGE_KEY) || {};
 
     static set(permissions: object): void {
         for (const permission in permissions) {

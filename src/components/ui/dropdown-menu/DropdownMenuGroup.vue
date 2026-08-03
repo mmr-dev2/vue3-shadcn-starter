@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <DropdownMenuGroup
-        data-slot="dropdown-menu-group"
-        v-bind="props"
-    >
-        <slot/>
+    <DropdownMenuGroup data-slot="dropdown-menu-group" v-bind="props">
+        <slot />
     </DropdownMenuGroup>
 </template>

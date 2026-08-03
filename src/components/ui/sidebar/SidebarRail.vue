@@ -30,6 +30,6 @@
         "
         @click="toggleSidebar"
     >
-        <slot/>
+        <slot />
     </button>
 </template>

@@ -2,10 +2,10 @@ import { ref, computed } from 'vue';
 import type { Ref, ComputedRef } from 'vue';
 
 interface UseLoading {
-    isLoading: ComputedRef<boolean>,
-    startLoading: () => void,
-    endLoading: () => void,
-    startFakeLoading: (delay?: number) => Promise<true>
+    isLoading: ComputedRef<boolean>;
+    startLoading: () => void;
+    endLoading: () => void;
+    startFakeLoading: (delay?: number) => Promise<true>;
 }
 
 export function useLoading(): UseLoading {

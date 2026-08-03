@@ -13,7 +13,7 @@ enum HttpMethod {
     PUT = 'PUT',
     UNLINK = 'UNLINK',
     UNLOCK = 'UNLOCK',
-    VIEW = 'VIEW',
+    VIEW = 'VIEW'
 }
 
 export default HttpMethod;

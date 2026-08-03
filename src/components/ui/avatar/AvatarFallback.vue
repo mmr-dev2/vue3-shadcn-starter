@@ -16,6 +16,6 @@
         v-bind="delegatedProps"
         :class="cn('bg-muted flex size-full items-center justify-center rounded-full', props.class)"
     >
-        <slot/>
+        <slot />
     </AvatarFallback>
 </template>

@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <PopoverTrigger
-        data-slot="popover-trigger"
-        v-bind="props"
-    >
-        <slot/>
+    <PopoverTrigger data-slot="popover-trigger" v-bind="props">
+        <slot />
     </PopoverTrigger>
 </template>

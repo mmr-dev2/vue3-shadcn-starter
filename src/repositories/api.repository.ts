@@ -25,7 +25,9 @@ class ApiRepository {
             return;
         }
 
-        (instance.defaults.headers as unknown as Record<HttpMethod, Record<string, string>>)[method][name] = value;
+        (instance.defaults.headers as unknown as Record<HttpMethod, Record<string, string>>)[
+            method
+        ][name] = value;
     }
 
     static deleteHeader(name: string, method?: HttpMethod): void {
@@ -34,7 +36,9 @@ class ApiRepository {
             return;
         }
 
-        delete (instance.defaults.headers as unknown as Record<HttpMethod, Record<string, string>>)[method][name];
+        delete (instance.defaults.headers as unknown as Record<HttpMethod, Record<string, string>>)[
+            method
+        ][name];
     }
 
     static addRequestMiddleware(onFulfilled: RequestOnFulfilled): number {
@@ -45,7 +49,10 @@ class ApiRepository {
         instance.interceptors.request.eject(id);
     }
 
-    static addResponseMiddleware(onFulfilled: ResponseOnFulfilled, onRejected?: ResponseOnRejected): number {
+    static addResponseMiddleware(
+        onFulfilled: ResponseOnFulfilled,
+        onRejected?: ResponseOnRejected
+    ): number {
         return instance.interceptors.response.use(onFulfilled, onRejected);
     }
 
@@ -65,15 +72,27 @@ class ApiRepository {
         return instance.delete<ApiResponseData<T>>(url, config);
     }
 
-    static post<T = unknown>(url: string, data?: unknown, config?: ApiRequestConfig): Promise<ApiResponse<T>> {
+    static post<T = unknown>(
+        url: string,
+        data?: unknown,
+        config?: ApiRequestConfig
+    ): Promise<ApiResponse<T>> {
         return instance.post<ApiResponseData<T>>(url, data, config);
     }
 
-    static put<T = unknown>(url: string, data?: unknown, config?: ApiRequestConfig): Promise<ApiResponse<T>> {
+    static put<T = unknown>(
+        url: string,
+        data?: unknown,
+        config?: ApiRequestConfig
+    ): Promise<ApiResponse<T>> {
         return instance.put<ApiResponseData<T>>(url, data, config);
     }
 
-    static patch<T = unknown>(url: string, data?: unknown, config?: ApiRequestConfig): Promise<ApiResponse<T>> {
+    static patch<T = unknown>(
+        url: string,
+        data?: unknown,
+        config?: ApiRequestConfig
+    ): Promise<ApiResponse<T>> {
         return instance.patch<ApiResponseData<T>>(url, data, config);
     }
 }

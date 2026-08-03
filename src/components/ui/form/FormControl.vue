@@ -9,9 +9,11 @@
     <Slot
         :id="formItemId"
         data-slot="form-control"
-        :aria-describedby="!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`"
+        :aria-describedby="
+            !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`
+        "
         :aria-invalid="!!error"
     >
-        <slot/>
+        <slot />
     </Slot>
 </template>

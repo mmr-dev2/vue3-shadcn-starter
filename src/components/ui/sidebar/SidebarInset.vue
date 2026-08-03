@@ -18,6 +18,6 @@
             )
         "
     >
-        <slot/>
+        <slot />
     </main>
 </template>

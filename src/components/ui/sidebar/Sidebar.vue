@@ -24,10 +24,12 @@
     <div
         v-if="collapsible === 'none'"
         data-slot="sidebar"
-        :class="cn('bg-sidebar text-sidebar-foreground flex w-(--sidebar-width) flex-col', props.class)"
+        :class="
+            cn('bg-sidebar text-sidebar-foreground flex w-(--sidebar-width) flex-col', props.class)
+        "
         v-bind="$attrs"
     >
-        <slot/>
+        <slot />
     </div>
 
     <Sheet v-else-if="isMobile" :open="openMobile" v-bind="$attrs" @update:open="setOpenMobile">
@@ -46,7 +48,7 @@
                 <SheetDescription>Displays the mobile sidebar.</SheetDescription>
             </SheetHeader>
             <div class="flex h-full w-full flex-col">
-                <slot/>
+                <slot />
             </div>
         </SheetContent>
     </Sheet>
@@ -93,7 +95,7 @@
                 data-sidebar="sidebar"
                 class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
             >
-                <slot/>
+                <slot />
             </div>
         </div>
     </div>

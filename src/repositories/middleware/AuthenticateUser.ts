@@ -2,7 +2,6 @@ import router from '@/router';
 
 // Services
 
-
 // Enums
 import HttpStatusCode from '@/enums/HttpStatusCode';
 

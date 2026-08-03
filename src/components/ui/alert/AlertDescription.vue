@@ -3,7 +3,7 @@
     import { cn } from '@/utils';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 </script>
 
@@ -12,6 +12,6 @@
         data-slot="alert-description"
         :class="cn('text-muted-foreground col-start-2 text-sm [&_p]:leading-relaxed', props.class)"
     >
-        <slot/>
+        <slot />
     </div>
 </template>

@@ -7,10 +7,12 @@
     import { cn } from '@/utils';
     import { badgeVariants } from '.';
 
-    const props = defineProps<PrimitiveProps & {
-        variant?: BadgeVariants['variant']
-        class?: HTMLAttributes['class']
-    }>();
+    const props = defineProps<
+        PrimitiveProps & {
+            variant?: BadgeVariants['variant'];
+            class?: HTMLAttributes['class'];
+        }
+    >();
 
     const delegatedProps = reactiveOmit(props, 'class');
 </script>
@@ -21,6 +23,6 @@
         :class="cn(badgeVariants({ variant }), props.class)"
         v-bind="delegatedProps"
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

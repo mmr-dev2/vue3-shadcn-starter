@@ -31,6 +31,6 @@
         :as-child="asChild"
         v-bind="$attrs"
     >
-        <slot/>
+        <slot />
     </Primitive>
 </template>

@@ -23,6 +23,6 @@
             )
         "
     >
-        <slot/>
+        <slot />
     </div>
 </template>

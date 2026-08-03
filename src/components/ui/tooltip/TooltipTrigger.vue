@@ -6,10 +6,7 @@
 </script>
 
 <template>
-    <TooltipTrigger
-        data-slot="tooltip-trigger"
-        v-bind="props"
-    >
-        <slot/>
+    <TooltipTrigger data-slot="tooltip-trigger" v-bind="props">
+        <slot />
     </TooltipTrigger>
 </template>

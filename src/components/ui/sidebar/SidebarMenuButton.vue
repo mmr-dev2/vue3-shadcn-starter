@@ -13,8 +13,8 @@
     const props = withDefaults(
         defineProps<
             SidebarMenuButtonProps & {
-            tooltip?: string | Component;
-        }
+                tooltip?: string | Component;
+            }
         >(),
         {
             as: 'button',
@@ -30,20 +30,20 @@
 
 <template>
     <SidebarMenuButtonChild v-if="!tooltip" v-bind="{ ...delegatedProps, ...$attrs }">
-        <slot/>
+        <slot />
     </SidebarMenuButtonChild>
 
     <Tooltip v-else>
         <TooltipTrigger as-child>
             <SidebarMenuButtonChild v-bind="{ ...delegatedProps, ...$attrs }">
-                <slot/>
+                <slot />
             </SidebarMenuButtonChild>
         </TooltipTrigger>
         <TooltipContent side="right" align="center" :hidden="state !== 'collapsed' || isMobile">
             <template v-if="typeof tooltip === 'string'">
                 {{ tooltip }}
             </template>
-            <component :is="tooltip" v-else/>
+            <component :is="tooltip" v-else />
         </TooltipContent>
     </Tooltip>
 </template>

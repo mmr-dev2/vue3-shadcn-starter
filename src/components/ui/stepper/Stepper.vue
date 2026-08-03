@@ -14,14 +14,7 @@
 </script>
 
 <template>
-    <StepperRoot
-        v-slot="slotProps"
-        :class="cn(
-      'flex gap-2',
-      props.class,
-    )"
-        v-bind="forwarded"
-    >
-        <slot v-bind="slotProps"/>
+    <StepperRoot v-slot="slotProps" :class="cn('flex gap-2', props.class)" v-bind="forwarded">
+        <slot v-bind="slotProps" />
     </StepperRoot>
 </template>

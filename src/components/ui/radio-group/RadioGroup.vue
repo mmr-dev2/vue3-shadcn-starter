@@ -20,6 +20,6 @@
         :class="cn('grid gap-3', props.class)"
         v-bind="forwarded"
     >
-        <slot v-bind="slotProps"/>
+        <slot v-bind="slotProps" />
     </RadioGroupRoot>
 </template>

@@ -3,7 +3,7 @@
     import { cn } from '@/utils';
 
     const props = defineProps<{
-        class?: HTMLAttributes['class']
+        class?: HTMLAttributes['class'];
     }>();
 </script>
 
@@ -12,6 +12,6 @@
         data-slot="card-footer"
         :class="cn('flex items-center px-6 [.border-t]:pt-6', props.class)"
     >
-        <slot/>
+        <slot />
     </div>
 </template>
