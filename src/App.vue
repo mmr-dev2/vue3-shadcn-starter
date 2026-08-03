@@ -1,5 +1,5 @@
 <template>
-    <RouterView />
+    <RouterView :key="locale" />
 
     <Toaster />
 </template>
@@ -15,5 +15,5 @@
     import { useLocale } from '@/composables/useLocale';
 
     useTheme();
-    useLocale();
+    const { locale } = useLocale();
 </script>
