@@ -10,8 +10,6 @@ import router from './router';
 
 import { createI18n } from './services/language.service';
 
-import '@valibot/i18n/fa';
-
 const app = createApp(App);
 
 app.use(createPinia());

@@ -1,5 +1,3 @@
-import * as v from 'valibot';
-
 // Repositories
 import ApiRepository from '@/repositories/api.repository';
 
@@ -23,11 +21,7 @@ if (TokenService.isExist()) {
 if (LanguageService.isRtl()) {
     document.documentElement.dir = 'rtl';
     document.documentElement.lang = 'fa';
-
-    v.setGlobalConfig({ lang: 'fa' });
 } else {
     document.documentElement.dir = 'ltr';
     document.documentElement.lang = 'en';
-
-    v.setGlobalConfig({ lang: 'en' });
 }
