@@ -7,7 +7,7 @@ import { createSharedComposable, useStorage } from '@vueuse/core';
 // Types
 import type { Direction, UseDirection } from '@/types/direction';
 
-const STORAGE_KEY = 'direction';
+const STORAGE_KEY = 'dir';
 const DEFAULT: Direction = 'rtl';
 
 function initialize(): Direction {
