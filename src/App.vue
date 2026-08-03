@@ -1,7 +1,7 @@
 <template>
     <RouterView />
 
-    <Toaster/>
+    <Toaster />
 </template>
 
 <script setup lang="ts">
@@ -9,4 +9,9 @@
 
     // Components
     import { Toaster } from '@/components/ui/sonner';
+
+    // Composables
+    import { useTheme } from '@/composables/useTheme';
+
+    useTheme();
 </script>
