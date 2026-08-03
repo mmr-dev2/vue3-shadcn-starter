@@ -12,6 +12,8 @@
 
     // Composables
     import { useTheme } from '@/composables/useTheme';
+    import { useDirection } from '@/composables/useDirection';
 
     useTheme();
+    useDirection();
 </script>
