@@ -130,12 +130,14 @@
 @theme {
     --font-dana: Dana, sans-serif;
     --font-inter: Inter, sans-serif;
+}
 
+[data-font='dana'] {
     --font-sans: var(--font-dana);
     --default-font-feature-settings: "ss02";
-    --default-font-family: var(--font-dana);
+    --default-font-family: var(--font-sans);
 }
 
 [data-font='inter'] {
-    --font-sans: Inter, sans-serif;
+    --font-sans: var(--font-inter);
 }
