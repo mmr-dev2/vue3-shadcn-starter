@@ -7,14 +7,7 @@ import type {
 
 export interface ApiRequestConfig<T = unknown> extends AxiosRequestConfig<T> {}
 
-export interface ApiResponseData<T = unknown> {
-    code: number;
-    message: string;
-    error: string[];
-    value: T;
-}
-
-export interface ApiResponse<T = unknown> extends AxiosResponse<ApiResponseData<T>> {}
+export interface ApiResponse<T = unknown> extends AxiosResponse<T> {}
 
 export type RequestOnFulfilled = (
     config: InternalAxiosRequestConfig

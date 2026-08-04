@@ -17,12 +17,12 @@ class AuthService {
     static async login(data: LoginPayload, config?: ApiRequestConfig): Promise<LoginResponse> {
         const response = await AuthRepository.login(data, config);
 
-        const { token, user } = response.data.value;
+        const user = response.data;
 
-        TokenService.set(token);
+        TokenService.set(user.accessToken);
         UserService.set(user);
 
-        ApiRepository.setHeader(HttpHeader.AUTHORIZATION, `Bearer ${token}`);
+        ApiRepository.setHeader(HttpHeader.AUTHORIZATION, `Bearer ${user.accessToken}`);
 
         return response;
     }

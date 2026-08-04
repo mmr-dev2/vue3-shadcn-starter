@@ -2,21 +2,15 @@ import type { ApiResponse } from './api';
 
 export interface User {
     id: number;
-    first_name: string | null;
-    last_name: string | null;
-    phone_number: string;
-    email: string | null;
-    created_at: string | null;
-    updated_at: string | null;
+    username: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    gender: string;
+    image: string;
+    accessToken: string;
+    refreshToken: string;
 }
 
-export interface UserResponseValue {
-    user: User;
-}
-
-export interface UsersResponseValue {
-    users: User[];
-}
-
-export interface UserResponse extends ApiResponse<UserResponseValue> {}
-export interface UsersResponse extends ApiResponse<UsersResponseValue> {}
+export interface UserResponse extends ApiResponse<User> {}
+export interface UsersResponse extends ApiResponse<User[]> {}

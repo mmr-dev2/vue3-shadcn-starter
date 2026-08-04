@@ -62,18 +62,22 @@ export default {
             log_out: 'Log out'
         }
     },
-    login: {
-        title: 'Login to your account',
-        subtitle: 'Enter your email below to login to your account',
-        email_label: 'Email',
-        password_label: 'Password',
-        forgot_password: 'Forgot your password?',
-        login_button: 'Login',
-        or_continue_with: 'Or continue with',
-        login_with_github: 'Login with GitHub',
-        no_account: 'Don\'t have an account?',
-        sign_up: 'Sign up',
-        side_image_alt: 'Image'
+    auth: {
+        login: {
+            title: 'Login to your account',
+            description: 'Enter your username below to login to your account',
+            username: 'Username',
+            password: 'Password',
+            forgot_password: 'Forgot your password?',
+            submit: 'Login',
+            or_continue_with: 'Or continue with',
+            login_with_github: 'Login with GitHub',
+            no_account: 'Don\'t have an account?',
+            sign_up: 'Sign up',
+            side_image_alt: 'Image',
+            success: 'Logged in successfully',
+            error: 'Invalid username or password'
+        }
     },
     app: {
         breadcrumb: {

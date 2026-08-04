@@ -6,7 +6,6 @@ import HttpMethod from '@/enums/HttpMethod';
 // Types
 import type {
     ApiRequestConfig,
-    ApiResponseData,
     ApiResponse,
     RequestOnFulfilled,
     ResponseOnFulfilled,
@@ -61,15 +60,15 @@ class ApiRepository {
     }
 
     static request<T = unknown>(config: ApiRequestConfig): Promise<ApiResponse<T>> {
-        return instance.request<ApiResponseData<T>>(config);
+        return instance.request<T>(config);
     }
 
     static get<T = unknown>(url: string, config?: ApiRequestConfig): Promise<ApiResponse<T>> {
-        return instance.get<ApiResponseData<T>>(url, config);
+        return instance.get<T>(url, config);
     }
 
     static delete<T = unknown>(url: string, config?: ApiRequestConfig): Promise<ApiResponse<T>> {
-        return instance.delete<ApiResponseData<T>>(url, config);
+        return instance.delete<T>(url, config);
     }
 
     static post<T = unknown>(
@@ -77,7 +76,7 @@ class ApiRepository {
         data?: unknown,
         config?: ApiRequestConfig
     ): Promise<ApiResponse<T>> {
-        return instance.post<ApiResponseData<T>>(url, data, config);
+        return instance.post<T>(url, data, config);
     }
 
     static put<T = unknown>(
@@ -85,7 +84,7 @@ class ApiRepository {
         data?: unknown,
         config?: ApiRequestConfig
     ): Promise<ApiResponse<T>> {
-        return instance.put<ApiResponseData<T>>(url, data, config);
+        return instance.put<T>(url, data, config);
     }
 
     static patch<T = unknown>(
@@ -93,7 +92,7 @@ class ApiRepository {
         data?: unknown,
         config?: ApiRequestConfig
     ): Promise<ApiResponse<T>> {
-        return instance.patch<ApiResponseData<T>>(url, data, config);
+        return instance.patch<T>(url, data, config);
     }
 }
 

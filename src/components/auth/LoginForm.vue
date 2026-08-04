@@ -1,47 +1,69 @@
-<script setup lang="ts">
-    import type { HTMLAttributes } from 'vue';
-    import { cn } from '@/utils';
-    import { Button } from '@/components/ui/button';
-    import {
-        Field,
-        FieldDescription,
-        FieldGroup,
-        FieldLabel,
-        FieldSeparator
-    } from '@/components/ui/field';
-    import { Input } from '@/components/ui/input';
-
-    const props = defineProps<{
-        class?: HTMLAttributes['class'];
-    }>();
-</script>
-
 <template>
-    <form :class="cn('flex flex-col gap-6', props.class)">
+    <form class="flex flex-col gap-6" @submit="onSubmit">
         <FieldGroup>
             <div class="flex flex-col items-center gap-1 text-center">
-                <h1 class="text-2xl font-bold">{{ $t('login.title') }}</h1>
+                <h1 class="text-2xl font-bold">
+                    {{ $t('auth.login.title') }}
+                </h1>
+
                 <p class="text-muted-foreground text-sm text-balance">
-                    {{ $t('login.subtitle') }}
+                    {{ $t('auth.login.description') }}
                 </p>
             </div>
+
+            <VeeField v-slot="{ field, errors }" name="username">
+                <Field :data-invalid="!!errors.length">
+                    <FieldLabel for="username">
+                        {{ $t('auth.login.username') }}
+                    </FieldLabel>
+
+                    <Input
+                        v-bind="field"
+                        id="username"
+                        placeholder="emilys"
+                        autocomplete="off"
+                        :aria-invalid="!!errors.length"
+                    />
+
+                    <FieldError v-if="errors.length" :errors="errors" />
+                </Field>
+            </VeeField>
+
+            <VeeField v-slot="{ field, errors }" name="password">
+                <Field :data-invalid="!!errors.length">
+                    <div class="flex items-center">
+                        <FieldLabel for="password">
+                            {{ $t('auth.login.password') }}
+                        </FieldLabel>
+
+                        <a href="#" class="ms-auto text-sm underline-offset-4 hover:underline">
+                            {{ $t('auth.login.forgot_password') }}
+                        </a>
+                    </div>
+
+                    <Input
+                        v-bind="field"
+                        type="password"
+                        id="password"
+                        placeholder="emilyspass"
+                        autocomplete="off"
+                        :aria-invalid="!!errors.length"
+                    />
+
+                    <FieldError v-if="errors.length" :errors="errors" />
+                </Field>
+            </VeeField>
+
             <Field>
-                <FieldLabel for="email"> {{ $t('login.email_label') }} </FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                <Button type="submit" :disabled="isSubmitting">
+                    {{ $t('auth.login.submit') }}
+
+                    <Spinner v-if="isSubmitting" class="animate-spin" />
+                </Button>
             </Field>
-            <Field>
-                <div class="flex items-center">
-                    <FieldLabel for="password"> {{ $t('login.password_label') }} </FieldLabel>
-                    <a href="#" class="ms-auto text-sm underline-offset-4 hover:underline">
-                        {{ $t('login.forgot_password') }}
-                    </a>
-                </div>
-                <Input id="password" type="password" required />
-            </Field>
-            <Field>
-                <Button type="submit"> {{ $t('login.login_button') }} </Button>
-            </Field>
-            <FieldSeparator>{{ $t('login.or_continue_with') }}</FieldSeparator>
+
+            <FieldSeparator>{{ $t('auth.login.or_continue_with') }}</FieldSeparator>
+
             <Field>
                 <Button variant="outline" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -50,13 +72,72 @@
                             fill="currentColor"
                         />
                     </svg>
-                    {{ $t('login.login_with_github') }}
+                    {{ $t('auth.login.login_with_github') }}
                 </Button>
+
                 <FieldDescription class="text-center">
-                    {{ $t('login.no_account') }}
-                    <a href="#">{{ $t('login.sign_up') }}</a>
+                    {{ $t('auth.login.no_account') }}
+
+                    <a href="#">{{ $t('auth.login.sign_up') }}</a>
                 </FieldDescription>
             </Field>
         </FieldGroup>
     </form>
 </template>
+
+<script setup lang="ts">
+    // Vue
+    import { useRouter } from 'vue-router';
+
+    // Frameworks
+    import { t } from '@/i18n';
+    import { z } from 'zod';
+    import { toTypedSchema } from '@vee-validate/zod';
+    import { useForm, Field as VeeField } from 'vee-validate';
+    import { toast } from 'vue-sonner';
+
+    // Services
+    import AuthService from '@/services/auth.service';
+
+    // Components
+    import { Button } from '@/components/ui/button';
+    import { Input } from '@/components/ui/input';
+    import { Spinner } from '@/components/ui/spinner';
+    import {
+        FieldGroup,
+        Field,
+        FieldLabel,
+        FieldError,
+        FieldSeparator,
+        FieldDescription
+    } from '@/components/ui/field';
+
+    const router = useRouter();
+
+    const schema = toTypedSchema(
+        z.object({
+            username: z.string().min(3),
+            password: z.string().min(8)
+        })
+    );
+
+    const { handleSubmit, isSubmitting } = useForm({
+        validationSchema: schema,
+        initialValues: {
+            username: '',
+            password: ''
+        }
+    });
+
+    const onSubmit = handleSubmit(async function (values) {
+        try {
+            await AuthService.login(values);
+
+            toast.success(t('auth.login.success'));
+
+            router.push({ name: 'Dashboard' });
+        } catch (error) {
+            toast.error(t('auth.login.error'));
+        }
+    });
+</script>

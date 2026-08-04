@@ -4,13 +4,8 @@ import type { ApiResponse } from './api';
 import type { User } from '@/types/user';
 
 export interface LoginPayload {
-    phone_number: string;
+    username: string;
     password: string;
 }
 
-export interface LoginResponseValue {
-    token: string;
-    user: User;
-}
-
-export interface LoginResponse extends ApiResponse<LoginResponseValue> {}
+export interface LoginResponse extends ApiResponse<User> {}
