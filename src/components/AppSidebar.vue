@@ -3,18 +3,15 @@
 
     import {
         AudioWaveform,
-        BookOpen,
-        Bot,
         Command,
-        Frame,
         GalleryVerticalEnd,
-        Map,
-        PieChart,
-        Settings2,
-        SquareTerminal
+        LayoutDashboard,
+        ListTodo,
+        Newspaper,
+        ShoppingBag,
+        Users
     } from '@lucide/vue';
     import NavMain from '@/components/NavMain.vue';
-    import NavProjects from '@/components/NavProjects.vue';
     import NavUser from '@/components/NavUser.vue';
     import TeamSwitcher from '@/components/TeamSwitcher.vue';
     import { t } from '@/i18n';
@@ -57,106 +54,81 @@
         ],
         navMain: [
             {
-                title: t('sidebar.nav.playground.title'),
+                title: t('sidebar.nav.dashboard.title'),
+                url: '/',
+                icon: LayoutDashboard
+            },
+            {
+                title: t('sidebar.nav.users.title'),
                 url: '#',
-                icon: SquareTerminal,
+                icon: Users,
                 isActive: true,
                 items: [
                     {
-                        title: t('sidebar.nav.playground.history'),
+                        title: t('sidebar.nav.users.all'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.playground.starred'),
-                        url: '#'
-                    },
-                    {
-                        title: t('sidebar.nav.playground.settings'),
+                        title: t('sidebar.nav.users.add'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: t('sidebar.nav.models.title'),
+                title: t('sidebar.nav.todos.title'),
                 url: '#',
-                icon: Bot,
+                icon: ListTodo,
+                isActive: true,
                 items: [
                     {
-                        title: t('sidebar.nav.models.genesis'),
+                        title: t('sidebar.nav.todos.all'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.models.explorer'),
-                        url: '#'
-                    },
-                    {
-                        title: t('sidebar.nav.models.quantum'),
+                        title: t('sidebar.nav.todos.add'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: t('sidebar.nav.documentation.title'),
+                title: t('sidebar.nav.products.title'),
                 url: '#',
-                icon: BookOpen,
+                icon: ShoppingBag,
+                isActive: true,
                 items: [
                     {
-                        title: t('sidebar.nav.documentation.introduction'),
+                        title: t('sidebar.nav.products.all'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.documentation.get_started'),
+                        title: t('sidebar.nav.products.categories'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.documentation.tutorials'),
-                        url: '#'
-                    },
-                    {
-                        title: t('sidebar.nav.documentation.changelog'),
+                        title: t('sidebar.nav.products.add'),
                         url: '#'
                     }
                 ]
             },
             {
-                title: t('sidebar.nav.settings.title'),
+                title: t('sidebar.nav.posts.title'),
                 url: '#',
-                icon: Settings2,
+                icon: Newspaper,
+                isActive: true,
                 items: [
                     {
-                        title: t('sidebar.nav.settings.general'),
+                        title: t('sidebar.nav.posts.all'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.settings.team'),
+                        title: t('sidebar.nav.posts.tags'),
                         url: '#'
                     },
                     {
-                        title: t('sidebar.nav.settings.billing'),
-                        url: '#'
-                    },
-                    {
-                        title: t('sidebar.nav.settings.limits'),
+                        title: t('sidebar.nav.posts.add'),
                         url: '#'
                     }
                 ]
-            }
-        ],
-        projects: [
-            {
-                name: t('sidebar.projects.design_engineering'),
-                url: '#',
-                icon: Frame
-            },
-            {
-                name: t('sidebar.projects.sales_marketing'),
-                url: '#',
-                icon: PieChart
-            },
-            {
-                name: t('sidebar.projects.travel'),
-                url: '#',
-                icon: Map
             }
         ]
     };
@@ -169,7 +141,6 @@
         </SidebarHeader>
         <SidebarContent>
             <NavMain :items="data.navMain" />
-            <NavProjects :projects="data.projects" />
         </SidebarContent>
         <SidebarFooter>
             <NavUser :user="data.user" />

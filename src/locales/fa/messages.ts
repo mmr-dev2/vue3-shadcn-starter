@@ -2,37 +2,31 @@ export default {
     hi: 'سلام',
     sidebar: {
         nav: {
-            playground: {
-                title: 'محیط آزمایش',
-                history: 'تاریخچه',
-                starred: 'ستاره‌دار',
-                settings: 'تنظیمات'
+            dashboard: {
+                title: 'داشبورد'
             },
-            models: {
-                title: 'مدل‌ها',
-                genesis: 'جنسیس',
-                explorer: 'اکسپلورر',
-                quantum: 'کوانتوم'
+            users: {
+                title: 'کاربران',
+                all: 'همه کاربران',
+                add: 'افزودن کاربر'
             },
-            documentation: {
-                title: 'مستندات',
-                introduction: 'معرفی',
-                get_started: 'شروع کار',
-                tutorials: 'آموزش‌ها',
-                changelog: 'تغییرات'
+            todos: {
+                title: 'کارها',
+                all: 'همه کارها',
+                add: 'افزودن کار'
             },
-            settings: {
-                title: 'تنظیمات',
-                general: 'عمومی',
-                team: 'تیم',
-                billing: 'صورتحساب',
-                limits: 'محدودیت‌ها'
+            products: {
+                title: 'محصولات',
+                all: 'همه محصولات',
+                categories: 'دسته‌بندی‌ها',
+                add: 'افزودن محصول'
+            },
+            posts: {
+                title: 'پست‌ها',
+                all: 'همه پست‌ها',
+                tags: 'برچسب‌ها',
+                add: 'افزودن پست'
             }
-        },
-        projects: {
-            design_engineering: 'مهندسی طراحی',
-            sales_marketing: 'فروش و بازاریابی',
-            travel: 'سفر'
         },
         team_plan: {
             enterprise: 'سازمانی',
@@ -62,18 +56,22 @@ export default {
             log_out: 'خروج از حساب'
         }
     },
-    login: {
-        title: 'ورود به حساب کاربری',
-        subtitle: 'برای ورود به حساب کاربری خود، ایمیل خود را وارد کنید',
-        email_label: 'ایمیل',
-        password_label: 'رمز عبور',
-        forgot_password: 'رمز عبور خود را فراموش کرده‌اید؟',
-        login_button: 'ورود',
-        or_continue_with: 'یا ادامه با',
-        login_with_github: 'ورود با گیت‌هاب',
-        no_account: 'حساب کاربری ندارید؟',
-        sign_up: 'ثبت‌نام',
-        side_image_alt: 'تصویر'
+    auth: {
+        login: {
+            title: 'ورود به حساب کاربری',
+            description: 'برای ورود به حساب کاربری خود، نام کاربری خود را وارد کنید',
+            username: 'نام کاربری',
+            password: 'رمز عبور',
+            forgot_password: 'رمز عبور خود را فراموش کرده‌اید؟',
+            submit: 'ورود',
+            or_continue_with: 'یا ادامه با',
+            login_with_github: 'ورود با گیت‌هاب',
+            no_account: 'حساب کاربری ندارید؟',
+            sign_up: 'ثبت‌نام',
+            side_image_alt: 'تصویر',
+            success: 'ورود با موفقیت انجام شد',
+            error: 'نام کاربری یا رمز عبور نامعتبر است'
+        }
     },
     app: {
         breadcrumb: {

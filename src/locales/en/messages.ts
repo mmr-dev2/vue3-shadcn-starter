@@ -2,37 +2,31 @@ export default {
     hi: 'Hi',
     sidebar: {
         nav: {
-            playground: {
-                title: 'Playground',
-                history: 'History',
-                starred: 'Starred',
-                settings: 'Settings'
+            dashboard: {
+                title: 'Dashboard'
             },
-            models: {
-                title: 'Models',
-                genesis: 'Genesis',
-                explorer: 'Explorer',
-                quantum: 'Quantum'
+            users: {
+                title: 'Users',
+                all: 'All Users',
+                add: 'Add User'
             },
-            documentation: {
-                title: 'Documentation',
-                introduction: 'Introduction',
-                get_started: 'Get Started',
-                tutorials: 'Tutorials',
-                changelog: 'Changelog'
+            todos: {
+                title: 'Todos',
+                all: 'All Todos',
+                add: 'Add Todo'
             },
-            settings: {
-                title: 'Settings',
-                general: 'General',
-                team: 'Team',
-                billing: 'Billing',
-                limits: 'Limits'
+            products: {
+                title: 'Products',
+                all: 'All Products',
+                categories: 'Categories',
+                add: 'Add Product'
+            },
+            posts: {
+                title: 'Posts',
+                all: 'All Posts',
+                tags: 'Tags',
+                add: 'Add Post'
             }
-        },
-        projects: {
-            design_engineering: 'Design Engineering',
-            sales_marketing: 'Sales & Marketing',
-            travel: 'Travel'
         },
         team_plan: {
             enterprise: 'Enterprise',
